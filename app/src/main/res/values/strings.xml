@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyTask2</string>
+    <string name="view">View</string>
+    <string name="name">name</string>
+    <string-array name="bundle_keys">
+        <item>name</item>
+    </string-array>
+</resources>
