@@ -42,18 +42,10 @@ class RecyclerViewFragment : Fragment() {
     private fun getPersonDetails() : List<PersonEntity> {
         val personDetails : ArrayList<PersonEntity> = arrayListOf()
 
-        val person1 = PersonEntity(
-            1,
-            "Aaron Finch",
-            "13423",
-            23
-        )
-        val person2 =
-            PersonEntity(2, "Virat", "134235", 25)
-        val person3 =
-            PersonEntity(3, "ABD", "43356", 18)
-        val person4 =
-            PersonEntity(4, "Morris", "357457", 30)
+        val person1 = PersonEntity(1, "Aaron Finch", "13423", 23)
+        val person2 = PersonEntity(2, "Virat", "134235", 25)
+        val person3 = PersonEntity(3, "ABD", "43356", 18)
+        val person4 = PersonEntity(4, "Morris", "357457", 30)
 
         //fill the list.
         personDetails.run {
