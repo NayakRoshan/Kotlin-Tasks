@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mytask2.Entity.PersonEntity
+import com.example.mytask2.entity.PersonEntity
 import com.example.mytask2.R
 import kotlinx.android.synthetic.main.fragment_recyclerview.*
 

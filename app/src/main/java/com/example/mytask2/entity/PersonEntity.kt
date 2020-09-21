@@ -1,4 +1,4 @@
-package com.example.mytask2.Entity
+package com.example.mytask2.entity
 
 data class PersonEntity(
     val id : Int,

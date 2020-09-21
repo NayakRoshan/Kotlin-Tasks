@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mytask2.Entity.PersonEntity
+import com.example.mytask2.entity.PersonEntity
 import com.example.mytask2.R
 import kotlinx.android.synthetic.main.view_layout.view.*
 
