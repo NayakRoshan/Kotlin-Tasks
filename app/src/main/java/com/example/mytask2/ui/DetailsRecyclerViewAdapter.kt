@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mytask2.Entity.PersonEntity
 import com.example.mytask2.R
+import kotlinx.android.synthetic.main.view_layout.view.*
 
 class DetailsRecyclerViewAdapter(
     private val context : Context,
@@ -17,11 +18,11 @@ class DetailsRecyclerViewAdapter(
 ) : RecyclerView.Adapter<DetailsRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val id : TextView by lazy { itemView.findViewById<TextView>(R.id.id) }
-        val name : TextView by lazy { itemView.findViewById<TextView>(R.id.name) }
-        val phoneNumber : TextView by lazy { itemView.findViewById<TextView>(R.id.phoneNumber) }
-        val age : TextView by lazy { itemView.findViewById<TextView>(R.id.age) }
-        val callPerson : Button by lazy { itemView.findViewById<Button>(R.id.viewClick) }
+        val id : TextView by lazy { itemView.personId }
+        val name : TextView by lazy { itemView.name }
+        val phoneNumber : TextView by lazy { itemView.phoneNumber }
+        val age : TextView by lazy { itemView.age }
+        val callPerson : Button by lazy { itemView.viewClick }
 
         fun adapterPosition() : Int = adapterPosition
     }

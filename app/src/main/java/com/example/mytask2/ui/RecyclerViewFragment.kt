@@ -9,13 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.mytask2.Entity.PersonEntity
 import com.example.mytask2.R
+import kotlinx.android.synthetic.main.fragment_recyclerview.*
 
 class RecyclerViewFragment : Fragment() {
 
-    lateinit var navController : NavController
+    private lateinit var navController : NavController
     private val bundleKeys : Array<String> = resources.getStringArray(R.array.bundle_keys)
 
     override fun onCreateView(
@@ -27,16 +27,15 @@ class RecyclerViewFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val detailsRecyclerView : RecyclerView = view.findViewById(R.id.recyclerView)
         navController = Navigation.findNavController(view)
-        detailsRecyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
         val detailsList : List<PersonEntity> = getPersonDetails()
         val viewAdapter = DetailsRecyclerViewAdapter(
             requireActivity(),
             detailsList,
             callDetailsFragment
         )
-        detailsRecyclerView.adapter = viewAdapter
+        recyclerView.adapter = viewAdapter
     }
 
     private fun getPersonDetails() : List<PersonEntity> {
@@ -47,7 +46,6 @@ class RecyclerViewFragment : Fragment() {
         val person3 = PersonEntity(3, "ABD", "43356", 18)
         val person4 = PersonEntity(4, "Morris", "357457", 30)
 
-        //fill the list.
         personDetails.run {
             this.add(person1)
             this.add(person2)
