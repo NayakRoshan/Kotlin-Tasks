@@ -28,14 +28,7 @@ class RecyclerViewFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         navController = Navigation.findNavController(view)
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-        val detailsList : List<PersonEntity> = getPersonDetails()
-        val viewAdapter = DetailsRecyclerViewAdapter(
-            requireActivity(),
-            detailsList,
-            callDetailsFragment
-        )
-        recyclerView.adapter = viewAdapter
+        setUpRecyclerView()
     }
 
     private fun getPersonDetails() : List<PersonEntity> {
@@ -66,5 +59,16 @@ class RecyclerViewFragment : Fragment() {
     private val callDetailsFragment = { name : String ->
         val bundle : Bundle = bundleOf(bundleKeys[0] to name )
         navController.navigate(R.id.action_recyclerViewFragment_to_detailsFragment, bundle)
+    }
+
+    private fun setUpRecyclerView() {
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        val detailsList : List<PersonEntity> = getPersonDetails()
+        val viewAdapter = DetailsRecyclerViewAdapter(
+            requireActivity(),
+            detailsList,
+            callDetailsFragment
+        )
+        recyclerView.adapter = viewAdapter
     }
 }
